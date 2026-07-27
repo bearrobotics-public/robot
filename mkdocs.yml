@@ -1,5 +1,5 @@
 site_name: Bear Robot API
-site_url: https://base.api.bearrobotics.ai/
+site_url: https://robot.api.bearrobotics.ai/
 copyright: Copyright 2026 Bear Robotics, Inc. All rights reserved.
 theme:
   name: 'material'

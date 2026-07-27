@@ -1,16 +1,16 @@
 # Bear Robot API
 
 ## Introduction
-Welcome to the Bear's **Base** repository. This repository contains:
+Welcome to the Bear's **Robot** repository. This repository contains:
 - Protocol Buffers (`.proto` files) defining the API specifications.
 - Documentation for integrating and using the Robot API service.
 
 The Bear Robot API Service is a gRPC-based API for third-party clients to:
-- **Send commands** to control the robot base.
-- **Receive status updates** from robot base, such as odometry and battery status.
+- **Send commands** to control the robot.
+- **Receive status updates** from the robot, such as odometry and battery status.
 - **Retrieve robot information**.
 
-For a comprehensive overview of the API capabilities, refer to the [Robot API public docs](https://bearrobotics-public.github.io/base/). While currently using gRPC, future plans include adding corresponding REST APIs.
+For a comprehensive overview of the API capabilities, refer to the [Robot API public docs](https://bearrobotics-public.github.io/robot/). While currently using gRPC, future plans include adding corresponding REST APIs.
 
 ---
 
@@ -48,14 +48,14 @@ The Bear Robot API facilitates communication between third-party clients and rob
 
 ### Cloning the Repository
 ```bash
-git clone https://github.com/bearrobotics-public/base.git
-cd base
+git clone https://github.com/bearrobotics-public/robot.git
+cd robot
 ```
 
 ### Compile & Develop
-The [Robot API Reference](https://bearrobotics-public.github.io/base/v1.3/resources/Mission/) has documentation for available API.
+The [Robot API Reference](https://bearrobotics-public.github.io/robot/v1.3/resources/Mission/) has documentation for available API.
 
-Client code generation instructions and usage examples for Python can be found [HERE](https://bearrobotics-public.github.io/base/guides/setup/examples_python/)
+Client code generation instructions and usage examples for Python can be found [HERE](https://bearrobotics-public.github.io/robot/guides/setup/examples_python/)
 
 ## License
 
