@@ -1,16 +1,16 @@
 # Overview
 
-This document describes the gRPC-based Bear Base API Service for third-party clients. The Bear Base API service enables third parties to:
+This document describes the gRPC-based Bear Robot API service for third-party clients. The Bear Robot API service enables third parties to:
 
 1. Send commands to control the robots
 2. Receive status updates from robots (e.g., odometry, battery status)
 3. Retrieve information about the robots
 
-For a detailed list of API capabilities, please navigate through the **API Reference**. Bear Base API uses the open-source gRPC framework. In the future, corresponding REST APIs will be added.
+For a detailed list of API capabilities, please navigate through the [Robot API Reference](v1.3/resources/Mission/). Bear Robot API uses the open-source gRPC framework. In the future, corresponding REST APIs will be added.
 
 ## gRPC
 
-Third-party clients communicate with the Bear Base API service via [gRPC](https://grpc.io/docs/what-is-grpc/introduction). For request/response type communication, [unary RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#unary-rpc) is used. For scenarios where clients need continuous updates from the Bear Base API service, [server streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc) is utilized.
+Third-party clients communicate with the Bear Robot API service via [gRPC](https://grpc.io/docs/what-is-grpc/introduction). For request/response type communication, [unary RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#unary-rpc) is used. For scenarios where clients need continuous updates from the Bear Robot API service, [server streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc) is utilized.
 
 For server streaming RPCs, all responses include metadata containing a timestamp and a sequence number:
 
