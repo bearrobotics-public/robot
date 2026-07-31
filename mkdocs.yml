@@ -34,6 +34,8 @@ markdown_extensions:
       alternate_style: true
   - attr_list
 nav:
+  - Overview:
+    - index.md
   - API Reference:
     - v1.3:
       - gRPC API:
@@ -45,6 +47,16 @@ nav:
         - Settings: v1.3/resources/Settings.md
         - Servi: v1.3/resources/Servi.md
         - Carti: v1.3/resources/Carti.md
+    - v1.2:
+      - gRPC API:
+        - Mission: v1.2/resources/Mission.md
+        - Locations & Maps: v1.2/resources/LocationsAndMaps.md
+        - Localization & Navigation: v1.2/resources/LocalizationAndNavigation.md
+        - Robot Status: v1.2/resources/RobotStatus.md
+        - Robot System: v1.2/resources/RobotSystem.md
+        - Settings: v1.2/resources/Settings.md
+        - Servi: v1.2/resources/Servi.md
+        - Carti: v1.2/resources/Carti.md
     - v0.1:
       - Services:
         - RobotAPIService: v0.1/robot/RobotApiService.md
@@ -89,4 +101,8 @@ nav:
       - Network Connectivity: guides/setup/setup_network.md
       - Examples: guides/setup/examples_python.md
     - Troubleshooting: guides/troubleshooting.md
-  - Changelog: changelog.md
+  - Changelog:
+    - v1.3: changelog/v1.3.md
+    - v1.2: changelog/v1.2.md
+    - v0.1: changelog/v0.1.md
+    - v0.0: changelog/v0.0.md

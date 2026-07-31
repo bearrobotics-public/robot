@@ -1,4 +1,4 @@
-## Introduction
+# Overview
 
 This document describes the gRPC-based Bear Base API Service for third-party clients. The Bear Base API service enables third parties to:
 
@@ -8,7 +8,7 @@ This document describes the gRPC-based Bear Base API Service for third-party cli
 
 For a detailed list of API capabilities, please navigate through the **API Reference**. Bear Base API uses the open-source gRPC framework. In the future, corresponding REST APIs will be added.
 
-## Overview
+## gRPC
 
 Third-party clients communicate with the Bear Base API service via [gRPC](https://grpc.io/docs/what-is-grpc/introduction). For request/response type communication, [unary RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#unary-rpc) is used. For scenarios where clients need continuous updates from the Bear Base API service, [server streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc) is utilized.
 
@@ -17,7 +17,7 @@ For server streaming RPCs, all responses include metadata containing a timestamp
 - **Timestamp**: The timestamp is based on the local clock where the response was generated and is not globally synchronized, so it should not be used for ordering responses.
 - **Sequence Number**: The sequence number is guaranteed to be incremental and can be used to detect duplicate responses. Note that the sequence number may reset to 0 at any time, though this should be rare (e.g., only during a service or robot restart).
 
-If strict detection of response duplication is desired, both the sequence number and timestamp should be used together. 
+If strict detection of response duplication is desired, both the sequence number and timestamp should be used together.
 
 Also note the following for streaming RPC queries:
 
@@ -28,6 +28,4 @@ Also note the following for streaming RPC queries:
 When a gRPC call completes successfully, the server returns an OK status along with the specified response to the client. If an error occurs, gRPC returns an [error status code](https://grpc.io/docs/guides/error/#error-status-codes) and an error message.
 
 ## Message Encoding
- gRPC uses [Protocol Buffers](https://protobuf.dev/) which provide a serialization format for encoding and decoding, as 
- well as Interface  Definition  Language
-
+gRPC uses [Protocol Buffers](https://protobuf.dev/) which provide a serialization format for encoding and decoding, as well as Interface Definition Language
