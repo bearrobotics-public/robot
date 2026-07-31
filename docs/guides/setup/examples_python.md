@@ -8,7 +8,7 @@ For example, to drive the robot we need the Service from `robot_api_service.prot
 ```bash
 python -m grpc_tools.protoc -I=/path_to_repository/bearrobotics-public/robot/ --python_out=. --grpc_python_out=. bearrobotics/api/v0/robot/robot_api_service.proto
 
-python -m grpc_tools.protoc -I=/path_to_repository/bearrobotics-public/robot/ --python_out=. bearrobotics/api/v0/common/math.proto 
+python -m grpc_tools.protoc -I=/path_to_repository/bearrobotics-public/robot/ --python_out=. bearrobotics/api/v0/common/math.proto
 ```
 
 #### Driving the Robot

@@ -55,9 +55,8 @@ cd robot
 ### Compile & Develop
 The [Robot API Reference](https://bearrobotics-public.github.io/robot/v1.3/resources/Mission/) has documentation for available API.
 
-Client code generation instructions and usage examples for Python can be found [HERE](https://bearrobotics-public.github.io/robot/guides/setup/examples_python/)
+Client code generation instructions and usage examples for Python can be found in our [Setup Guide](https://bearrobotics-public.github.io/robot/guides/setup/examples_python/)
 
 ## License
 
 This project is licensed under the Mozilla Public License version 2.0 (MPLv2). See the [LICENSE](./LICENSE) file for details.
-

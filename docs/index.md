@@ -6,7 +6,7 @@ This document describes the gRPC-based Bear Robot API service for third-party cl
 2. Receive status updates from robots (e.g., odometry, battery status)
 3. Retrieve information about the robots
 
-For a detailed list of API capabilities, please navigate through the [Robot API Reference](v1.3/resources/Mission/). Bear Robot API uses the open-source gRPC framework. In the future, corresponding REST APIs will be added.
+For a detailed list of API capabilities, please navigate through the [Robot API Reference](v1.3/resources/Mission.md/). Bear Robot API uses the open-source gRPC framework. In the future, corresponding REST APIs will be added.
 
 ## gRPC
 
