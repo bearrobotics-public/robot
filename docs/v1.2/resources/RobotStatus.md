@@ -34,8 +34,6 @@ The current robot state including connectivity, battery, emergency stop, mission
 | `error_codes` | [`ErrorCodes`](#errorcodes) | Error codes returned by the robot. |
 | `typed_status` | *oneof* | Robot type-specific state information. Only one type may be set at a time. |
 | `twist` | [`Twist`](#twist) | Current linear and angular velocity of the robot. Omitted when not reported by the robot. |
-| `localization_state` | [`LocalizationState`](LocalizationAndNavigation.md#localizationstate-enum) | Localization state of the robot. |
-| `navigation_state` | [`NavigationState`](#navigationstate) | Navigation-related state of the robot, including whether it is currently stuck. |
 
 ##### Twist
 Represents the current velocity of the robot in 2D (linear along the forward axis, angular around the vertical axis). Omitted when the robot does not report velocity.
@@ -44,37 +42,6 @@ Represents the current velocity of the robot in 2D (linear along the forward axi
 |------|------|-------------|
 | `linear_velocity` | `float` | Current speed along the robot's forward axis, in m/s. Positive for forward, negative for reverse. |
 | `angular_velocity` | `float` | Current rotation rate, in rad/s. Positive for clockwise when viewed from above. |
-
-##### NavigationState
-Represents navigation-related state for the robot.
-
-| Field | Message Type | Description |
-|------|------|-------------|
-| `stuck_state` | [`StuckState`](#stuckstate) | Whether the robot is currently stuck (unable to make navigation progress) and, when known, the reason. |
-
-##### StuckState
-Represents whether the robot is currently unable to make navigation progress, and the reason for it when known. "Stuck" is distinct from a mission failure: it is a transient, recoverable navigation condition (e.g., obstruction, restricted area) in which the robot has stopped moving but is otherwise healthy.
-
-| Field | Message Type | Description |
-|------|------|-------------|
-| `state` | [`State`](#stuckstate-state-enum) *enum* | Current stuck state of the robot. |
-| `reason` | [`Reason`](#stuckstate-reason-enum) *enum* | Reason the robot is stuck. Only meaningful when `state` is `STATE_STUCK`; otherwise expect `REASON_UNKNOWN`. |
-
-#### (StuckState) State `enum`
-| Name | Number | Description |
-|------|--------|-------------|
-| STATE_UNKNOWN | 0 | Default unset value. Treat as an error if received. |
-| STATE_NOT_STUCK | 1 | The robot is operating normally and not stuck. |
-| STATE_STUCK | 2 | The robot is unable to make navigation progress. See `reason` for the cause when available. |
-
-#### (StuckState) Reason `enum`
-| Name | Number | Description |
-|------|--------|-------------|
-| REASON_UNKNOWN | 0 | No reason reported. Set when `state` != `STATE_STUCK`, or when the upstream stack did not provide a discrete cause. |
-| REASON_PATH_BLOCKED | 1 | The planned path is blocked at runtime by a dynamic obstacle. |
-| REASON_DESTINATION_OBSTRUCTED | 2 | The destination cell is occupied by an obstacle. Reserved for future use; not currently emitted by the robot. |
-| REASON_DESTINATION_UNREACHABLE | 3 | No feasible path exists to the destination. Reserved for future use; not currently emitted by the robot. |
-| REASON_INSIDE_RESTRICTED_AREA | 4 | The robot is inside a restricted/annotated area it cannot leave (e.g., a no-go zone it was placed into). |
 
 ##### RobotConnection
 Represents the online connection state between the cloud and the robot.
@@ -197,15 +164,6 @@ Represents the set of robot states specifically for Carti robots.
             "linearVelocity": 0.5,
             "angularVelocity": 0.0
           },
-          "localizationState": {
-            "state": "STATE_SUCCEEDED"
-          },
-          "navigationState": {
-            "stuckState": {
-              "state": "STATE_NOT_STUCK",
-              "reason": "REASON_UNKNOWN"
-            }
-          },
           "serviState": {
             "trayStates": {
               "trayStates": [
@@ -274,8 +232,6 @@ The current robot state including connectivity, battery, emergency stop, mission
 | `error_codes` | [`ErrorCodes`](#errorcodes) | Error codes returned by the robot. |
 | `typed_status` | *oneof* | Robot type-specific state information. Only one type may be set at a time. |
 | `twist` | [`Twist`](#twist) | Current linear and angular velocity of the robot. Omitted when not reported by the robot. |
-| `localization_state` | [`LocalizationState`](LocalizationAndNavigation.md#localizationstate-enum) | Localization state of the robot. |
-| `navigation_state` | [`NavigationState`](#navigationstate) | Navigation-related state of the robot, including whether it is currently stuck. |
 
 ##### Response Example
 === "JSON"
@@ -328,72 +284,6 @@ The current robot state including connectivity, battery, emergency stop, mission
         "twist": {
           "linearVelocity": 0.3,
           "angularVelocity": 0.0
-        },
-        "localizationState": {
-          "state": "STATE_SUCCEEDED"
-        },
-        "navigationState": {
-          "stuckState": {
-            "state": "STATE_STUCK",
-            "reason": "REASON_PATH_BLOCKED"
-          }
-        }
-      }
-    }
-    ```
-
-### Errors
-| ErrorCode  | Description |
-|------------|-------------|
-| `INTERNAL` | Internal server error occurred while processing the request. |
-
------------
-## SubscribeNavigationStatus
-Streaming mode: [`event`](../../index.md#overview)
-
-A [server side streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#server-streaming-rpc) endpoint to subscribe to the robot's navigation status.
-
-Upon subscription, the latest known navigation state is sent immediately. Subsequent updates are streamed as the state changes.
-
-The **stuck** state indicates the robot is unable to make navigation progress (e.g., blocked by an obstacle or inside a restricted area) and is distinct from a mission failure.
-
-!!! tip
-    Prefer this RPC over [SubscribeRobotStatus](#subscriberobotstatus) when only the navigation signal is of interest; the full robot status carries more data and updates more frequently.
-
-### Request
-
-The request takes no parameters.
-
-##### Request Example
-=== "JSON"
-    ```json
-      {}
-    ```
-
-### Response
-
-##### metadata `EventMetadata`
-
-| Field | Message Type | Description |
-|------|------|-------------|
-| `timestamp` | [`Timestamp`](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/timestamp.proto) | The time when the event was recorded. |
-| `sequence_number` | `int64` | An incremental sequence number generated by the robot.<br />The sequence number should never be negative and can be reset to 0.<br />i.e. sequence is valid if it is larger than the previous number or 0. |
-
-##### navigation_state `NavigationState`
-The current navigation-related state of the robot. See [`NavigationState`](#navigationstate) and [`StuckState`](#stuckstate) for field and enum definitions.
-
-##### Response Example
-=== "JSON"
-    ```json
-    {
-      "metadata": {
-        "timestamp": "2025-04-01T17:20:00Z",
-        "sequenceNumber": 87
-      },
-      "navigationState": {
-        "stuckState": {
-          "state": "STATE_STUCK",
-          "reason": "REASON_PATH_BLOCKED"
         }
       }
     }

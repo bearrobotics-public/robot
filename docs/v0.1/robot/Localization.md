@@ -11,9 +11,9 @@ The robot must be placed within a 5x5 meter window from the localization goal.
 |------------|-------------| ---|
 |`pose`   |[`Pose`](Robot.md#pose)	| The target pose for localization. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "pose": {
           "xMeters": 2.5,
@@ -40,9 +40,9 @@ Represents the current localization state.
 | `STATE_SUCCEEDED`  | 3      | The localization process completed successfully. |
 | `STATE_LOCALIZING` | 4      | The robot is actively performing localization.            |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "state": "STATE_LOCALIZING"
       }

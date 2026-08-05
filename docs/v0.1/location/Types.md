@@ -13,9 +13,9 @@ Represents a node in a graph structure used for navigation.
 |`graph_node_pose`	|[`PointWithOrientation`](../common/Math.md#pointwithorientation)	| Point with orientation of the GraphNode. |
 |`adjacent_graph_node_ids`	|`string` *repeated*	| Adjacent GraphNode IDs that robot can navigate from the current GraphNode. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "graphNodeId": "node_001",
         "graphNodePose": {

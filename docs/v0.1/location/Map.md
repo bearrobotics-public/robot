@@ -17,9 +17,9 @@ Represents a map within the robot's operational environment.
 |`annotation_ids`	|`string` *repeated*	| List of annotation identifiers associated with this map. |
 |`current_annotation_id`	|`string`	| Current annotation identifier. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "mapId": "9578",
         "displayName": "ITCT SEOUL",
@@ -54,9 +54,9 @@ The annotation associated with this map.
 |------------|-------------| ---|
 |`destinations`   |*repeated* [`Destination`](Annotation.md#destination)	| List of destinations in the annotation. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "mapId": "9578",
         "data": {
@@ -84,9 +84,9 @@ Represents the data of a map which includes the url, origin, and resolution.
 |`origin`	|[`Origin`](#origin)	| The Origin of the map. |
 |`m_per_pixel`	|`float`	| Maps real-world size to pixelated size (meters per pixel) This value is equivalent to the "resolution" defined in the ROS map server https://wiki.ros.org/map_server |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "mapDataId": "map_data_001",
         "url": "https://example.com/maps/map.png",
@@ -108,9 +108,9 @@ The 2D pose of the map's origin (x, y, yaw) in meters and radians. This value is
 |`y_m`	|`float`	| This is the y-coordinate of the origin of the map in the world frame. |
 |`yaw_radians`	|`float`	| This is the rotation around the z-axis (counterclockwise) of the map with respect to the world frame. A yaw of 0 means no rotation. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "xM": 0.0,
         "yM": 0.0,

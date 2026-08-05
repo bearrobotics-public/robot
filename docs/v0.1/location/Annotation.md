@@ -18,9 +18,9 @@ Annotations are used to define the areas on the map with specific parameters.
 |`preferred_paths`	|*repeated* [`PreferredPath`](#preferredpath)	| Directional and Bi-Directional paths which robots will try to follow when nearby. |
 |`queues`	|*repeated* [`Queue`](#queue)	| Queues are used to define the waiting area. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "annotationId": "67305",
         "displayName": "ITCT annotation A",
@@ -53,9 +53,9 @@ Destinations are used to define the single point of interest.
 | `TYPE_CONTACT_CHARGER` | 2 | The contact-type charger. The robot can charge through docking. |
 | `TYPE_INDUCTIVE_CHARGER` | 3 | The inductive-type charger. The robot can charge through docking, but no physical contact is needed. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "destinationId": "pickup_zone",
         "displayName": "Pickup Zone",
@@ -99,9 +99,9 @@ DockingParam is used to specify the docking process at the destination.
 | `REFERENCE_QR_CODE` | 2 | The QR code reference is used to specify the docking position. |
 | `REFERENCE_VL_MARKER` | 3 | The VL marker reference is used to specify the docking position. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "type": "TYPE_DEFAULT",
         "reference": "REFERENCE_DEFAULT",
@@ -120,9 +120,9 @@ Data specific to the destination type.
 |------------|-------------| ---|
 |`data`   |`map<string, string>`	| A map of key-value pairs. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "data": {
           "key1": "value1",
@@ -148,9 +148,9 @@ Areas on the map that the robot will try to avoid.
 | `TYPE_SOFT_OBSTACLE` | 1 | Soft obstacle that the robot will try to avoid, but can still drive through if necessary. |
 | `TYPE_RESTRICTED_OBSTACLE` | 2 | Restricted obstacle that the robot cannot enter and cannot exit if it becomes stuck inside this zone. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "obstacleId": "obstacle_001",
         "points": [
@@ -171,9 +171,9 @@ Directional and Bi-Directional paths which robots will try to follow when nearby
 |`preferred_path_id`   |`string`	| The ID of the preferred path. |
 |`graph_nodes`	|*repeated* [`GraphNode`](Types.md#graphnode)	| List of graph nodes that make up the preferred path. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "preferredPathId": "path_001",
         "graphNodes": []
@@ -189,9 +189,9 @@ Queues are used to define the waiting area.
 |`queue_poses`	|*repeated* [`GraphNode`](Types.md#graphnode)	| Represents a list of queuing points where the robot will wait. |
 |`destination_ids`	|`string` *repeated*	| These are end destinations that a queue can dequeue the robot to. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "queueId": "queue_001",
         "queuePoses": [],
