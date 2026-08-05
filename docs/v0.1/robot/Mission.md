@@ -13,9 +13,9 @@ Point on the map.
 |------------|-------------| ---|
 |`destination_id`   |`string`	| The ID of the destination. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "destinationId": "pickup_zone"
       }
@@ -28,9 +28,9 @@ Area on the map with one or more points where any one point is a valid goal for 
 |------------|-------------| ---|
 |`zone_id`   |`string`	| The ID of the zone. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "zoneId": "delivery_zone_1"
       }
@@ -45,9 +45,9 @@ Place on the map where the robot can be set to navigate towards.
 |`zone`	|[`Zone`](#zone) | An area on the map identified by zone ID. |
 |`pose`	|[`Pose`](Robot.md#pose)	| A specific pose (x, y, heading) on the map. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "pose": {
           "xMeters": 2.5,
@@ -77,9 +77,9 @@ Represents a mission.
 | `TYPE_LOOP`          | 4      | A mission that repeatedly visits multiple destinations until a condition, such as weight limit, is met. |
 | `TYPE_WAIT`          | 5      | A mission that remains at a specific location until triggered by an external event, such as a button press. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "type": "TYPE_ONEOFF",
         "goals": [
@@ -112,9 +112,9 @@ Action to update a current mission.
 | COMMAND_RESUME         | 3      | Resume a paused mission.                         |
 | COMMAND_FINISH         | 4      | Mark the mission as completed.                   |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionId": "f842c8ac-62de-412e-90fb-bf37022db2f4",
         "command": "COMMAND_PAUSE"
@@ -143,9 +143,9 @@ Override parameters for the mission settings.
 |------------|-------------| ---|
 |`mode`   |[`Mode`](#missionparamsmode-enum) *enum*	| The mode for the traverse mission. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "traverseParams": {
           "mode": "MODE_DEFAULT"
@@ -159,9 +159,9 @@ Override parameters for the mission settings.
 |------------|-------------| ---|
 |`mode`   |[`Mode`](#missionparamsmode-enum) *enum*	| The mode for the loop mission. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "loopParams": {
           "mode": "MODE_BUSSING"
@@ -205,9 +205,9 @@ Represents a mission state.
 | NAVIGATION_STATUS_UNDOCKING | 5 | Indicates that the robot is in the process of undocking at a charger or station. |
 | NAVIGATION_STATUS_NAVIGATING | 6 | Indicates that the robot is navigating to a destination but is not currently docking or undocking. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionId": "d6637a14-5f6b-43f6-bd86-cc1871a8322e",
         "state": "STATE_RUNNING",
@@ -233,9 +233,9 @@ A flexible goal definition used in generic missions.
 |`goal_type`   |`string`	| The type of the goal (e.g., "Pickup", "Dropoff"). |
 |`parameters`	|`map<string, string>`	| Any optional parameters for the goal in a key-value format. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "goalType": "Pickup",
         "parameters": {
@@ -254,9 +254,9 @@ A generic mission that supports string-typed mission names and flexible goals.
 |`goals`	|*repeated* [`GenericGoal`](#genericgoal)	| A list of generic goals associated with the mission. Each goal includes its type and other relevant information. |
 |`override_params`	|`map<string, string>`	| A map of key-value pairs for overriding default mission parameters. This provides flexibility to customize the mission's behavior. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "type": "Traverse",
         "goals": [

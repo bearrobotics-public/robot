@@ -15,9 +15,9 @@ Get the specified settings.
 ##### keys `repeated string` `required`
 The keys of the settings to retrieve.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "keys": [
           "navigation.max_linear_speed",
@@ -39,9 +39,9 @@ A key-value pair for robot configuration.
 | `key` | `string` | The setting key. |
 | `value` | `string` | The setting value, encoded as a string. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "settings": [
           {
@@ -72,9 +72,9 @@ Get a snapshot of all settings.
 
 *(No fields defined)*
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -83,9 +83,9 @@ Get a snapshot of all settings.
 ##### settings `repeated Setting`
 A snapshot of all settings with their current values. See [`Setting`](#setting).
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "settings": [
           {
@@ -118,9 +118,9 @@ Set the specified setting.
 ##### setting `Setting` `required`
 The setting key and value to set. See [`Setting`](#setting).
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "setting": {
           "key": "sound.volume",
@@ -133,9 +133,9 @@ The setting key and value to set. See [`Setting`](#setting).
 
 *(No fields defined)*
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -165,9 +165,9 @@ How unrecognized keys are handled.
 | UNRECOGNIZED_KEY_POLICY_SKIP | 1 | Skip unrecognized keys and continue; skipped keys are reported in the response. |
 | UNRECOGNIZED_KEY_POLICY_REJECT | 2 | Reject the entire RPC if any key is unrecognized. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "keys": [
           "navigation.max_linear_speed",
@@ -182,9 +182,9 @@ How unrecognized keys are handled.
 ##### unrecognized_keys `repeated string`
 Unrecognized keys from the request. Populated only when `unrecognized_key_policy` is `UNRECOGNIZED_KEY_POLICY_SKIP`.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "unrecognizedKeys": [
           "sound.volume"

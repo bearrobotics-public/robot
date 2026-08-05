@@ -17,9 +17,9 @@ Areas on the map that have specific parameters.
 |`sound_zone`	|[`SoundZone`](#soundzone)	| Sound zone parameters. |
 |`speed_zone`	|[`SpeedZone`](#speedzone)	| Speed zone parameters. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "zoneId": "zone_001",
         "points": [
@@ -42,9 +42,9 @@ Defines a direction vector for the zone.
 |`heading_radians`   |`float`	| The direction vector's angle in radians, relative to the map's origin and measured from the x-axis. |
 |`magnitude`	|`int32`	| The magnitude of the direction vector. Typically set to 254 for hard direction zones. The larger the magnitude, the more the robot will try to align with the direction. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "headingRadians": 1.57,
         "magnitude": 254
@@ -58,9 +58,9 @@ Defines an exclusive zone that limits the number of robots.
 |------------|-------------| ---|
 |`max_robots`   |`int32`	| Maximum number of robots allowed to enter the zone. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "maxRobots": 2
       }
@@ -71,9 +71,9 @@ Indicates a ramp zone. No additional parameters are required.
 
 *(No fields defined)*
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -82,9 +82,9 @@ Indicates a sound zone. No additional parameters are required.
 
 *(No fields defined)*
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -95,9 +95,9 @@ Defines a speed limit for the zone.
 |------------|-------------| ---|
 |`max_speed_m_per_sec`   |`float`	| Speed limit in the zone. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "maxSpeedMPerSec": 0.5
       }

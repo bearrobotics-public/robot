@@ -36,9 +36,9 @@ The system command to execute on the robot.
 #### Shutdown
 *(No fields defined)*
 
-##### JSON Request Example
+##### Request Example
 === "Reboot"
-    ```js
+    ```json
       {
         "systemCommand": {
           "reboot": {
@@ -48,7 +48,7 @@ The system command to execute on the robot.
       }
     ```
 === "Shutdown"
-    ```js
+    ```json
       {
         "systemCommand": {
           "shutdown": {}
@@ -60,9 +60,9 @@ The system command to execute on the robot.
 
 *(No fields defined)*
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 

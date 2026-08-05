@@ -31,9 +31,9 @@ Represents the state of the robot's battery system.
 | `CHARGE_METHOD_WIRED`      | 2      | The robot is charging via a wired connection. |
 | `CHARGE_METHOD_WIRELESS`   | 3      | The robot is charging wirelessly (inductive or contact charger). |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "chargePercent": 85,
         "state": "STATE_CHARGING",
@@ -56,9 +56,9 @@ Represents the emergency stop state.
 | `EMERGENCY_ENGAGED` | 1 | Triggers an emergency stop. Overrides and sets navigation-related velocity command to 0 to the motor. |
 | `EMERGENCY_DISENGAGED` | 2 | Wheels will resume acting upon software navigation commands. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "emergency": "EMERGENCY_DISENGAGED"
       }
@@ -109,9 +109,9 @@ High-level representation of various operating behavior on the robot.
 | `MISSION_IDLE` | 1 | Indicates no mission is currently in progress irrespective of other states. |
 | `MISSION_IN_PROGRESS` | 2 | The robot is currently on a mission. While in progress, the robot cannot accept any new mission. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "system": "SYSTEM_OK",
         "systemMessage": "",

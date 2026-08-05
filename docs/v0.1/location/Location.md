@@ -32,9 +32,9 @@ Represents a section of a floor. Each Section corresponds to an area on a floor 
 |`map_ids`	|`string` *repeated*	| List of map identifiers associated with this section. |
 |`current_map_id`	|`string`	| Current map identifier. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "locationId": "4RVF",
         "displayName": "City Deli & Grill",

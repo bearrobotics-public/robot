@@ -46,9 +46,9 @@ A mission that automatically selects the first unoccupied and unclaimed goal fro
 |`goals`   |*repeated* [`Goal`](LocalizationAndNavigation.md#goal)	| The **list** of target destinations for the mission. |
 
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "mission": {
           "baseMission": {
@@ -71,9 +71,9 @@ A mission that automatically selects the first unoccupied and unclaimed goal fro
 ##### **mission_id** `string`
 The ID of the mission created.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionId": "cbd47ab1-df21-479e-9f72-677b81ab55b0"
       }
@@ -105,9 +105,9 @@ The list of missions to create, in execution order. Each entry is a
 [`Mission`](#createmission). Only one [mission type](../../concepts/mission.md#mission-types)
 may be set per entry.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "missions": [
           {
@@ -137,9 +137,9 @@ may be set per entry.
 ##### **mission_ids** `repeated string`
 The IDs of the missions created, in the same order as the request.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionIds": [
           "cbd47ab1-df21-479e-9f72-677b81ab55b0",
@@ -192,9 +192,9 @@ Only one workflow type may be set at a time. Each type takes only goals with no 
 | `traverse` | `TraverseWorkflow` | Create a carti mission of type `Traverse`. |
 | `traverse_patrol` | `TraversePatrolWorkflow` | Create a carti mission of type `TraversePatrol`. |
 
-##### JSON Request Example
+##### Request Example
 === "Servi Delivery"
-    ```js
+    ```json
       {
         "missionWorkflow": {
           "serviWorkflow": {
@@ -209,7 +209,7 @@ Only one workflow type may be set at a time. Each type takes only goals with no 
       }
     ```
 === "Carti Traverse"
-    ```js
+    ```json
       {
         "missionWorkflow": {
           "cartiWorkflow": {
@@ -228,9 +228,9 @@ Only one workflow type may be set at a time. Each type takes only goals with no 
 ##### **mission_ids** `repeated string`
 The IDs of the missions created for this workflow.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionIds": ["mission-001", "mission-002"]
       }
@@ -252,7 +252,7 @@ Missions are executed in the order they are appended.
 
 ### Request / Response
 !!! note
-    AppendMission request and response message types are the same as [CreateMission](#createmission). See [CreateMission JSON Examples](#json-request-example).
+    AppendMission request and response message types are the same as [CreateMission](#createmission). See the [CreateMission Request Example](#request-example).
 
 ### Errors
 | ErrorCode  | Description |
@@ -279,9 +279,9 @@ The list of missions to append, in execution order. Each entry is an
 [`AppendMissionRequest`](#appendmission), wrapping a single
 [`Mission`](#createmission).
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "missions": [
           {
@@ -311,9 +311,9 @@ The list of missions to append, in execution order. Each entry is an
 ##### **mission_ids** `repeated string`
 The IDs of the missions appended, in the same order as the request.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionIds": [
           "f842c8ac-62de-412e-90fb-bf37022db2f4",
@@ -339,9 +339,9 @@ You can use [`SubscribeRobotStatus`](RobotStatus.md#subscriberobotstatus) to mon
 
 This request takes no fields.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
     {}
     ```
 
@@ -349,9 +349,9 @@ This request takes no fields.
 ##### **mission_id** `string`
 The ID of the mission created. Since this command is a special type of mission, its execution state is also available in response messages from [`SubscribeMissionStatus`](#subscribemissionstatus).
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
     {
       "missionId": "mission-xyz-001"
     }
@@ -380,9 +380,9 @@ mission queue once all missions have reached a [terminal state](#state-enum).
 
 This request takes no fields.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -391,9 +391,9 @@ This request takes no fields.
 ##### **mission_ids** `repeated string`
 The unique identifiers of the cleared missions.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionIds": [
           "f842c8ac-62de-412e-90fb-bf37022db2f4",
@@ -418,9 +418,9 @@ Advance the current mission to the next goal, skipping the current one. On succe
 
 This request takes no fields.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -428,9 +428,9 @@ This request takes no fields.
 ##### **mission_id** `string`
 The ID of the mission where the goal was skipped.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionId": "mission-xyz-001"
       }
@@ -470,9 +470,9 @@ Issues a command to control or update the current mission (e.g., pause, cancel).
 | COMMAND_RESUME         | 3      | Resume a paused mission.                         |
 | COMMAND_FINISH         | 4      | Mark the mission as completed.                   |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionCommand": {
           "missionId": "f842c8ac-62de-412e-90fb-bf37022db2f4",
@@ -485,9 +485,9 @@ Issues a command to control or update the current mission (e.g., pause, cancel).
 
 *(No fields defined)*
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -511,9 +511,9 @@ A [server side streaming RPC](https://grpc.io/docs/what-is-grpc/core-concepts/#s
 This request takes no fields. The stream reports the mission status of the robot
 you are connected to.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -646,9 +646,9 @@ Defines the different types of missions that can be executed.
 | STATUS_UNKNOWN         | 0      | Default value. It means `status` field is not returned. |
 | STATUS_NAVIGATING      | 1      | The robot is currently navigating to its target.|
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
     {
       "metadata": {
         "timestamp": "2025-04-01T15:30:00Z",

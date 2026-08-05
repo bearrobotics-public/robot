@@ -70,9 +70,9 @@ Retrieves the configured conveyor indexes for the robot. Indexes represent logic
 
 *(No fields defined)*
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -81,9 +81,9 @@ Retrieves the configured conveyor indexes for the robot. Indexes represent logic
 ##### indexes `repeated int32`
 List of available conveyor indexes for this robot.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "indexes": [1, 2]
       }
@@ -107,9 +107,9 @@ Upon subscription, the latest known conveyor states are sent immediately. Update
 
 *(No fields defined)*
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -157,9 +157,9 @@ Represents the state of a single conveyor.
 | INSTALLATION_STATE_INSTALLED | 1 | The conveyor is installed. |
 | INSTALLATION_STATE_NOT_INSTALLED | 2 | The conveyor is not installed. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
     {
       "states": [
         {
@@ -210,9 +210,9 @@ List of conveyor motor commands to execute.
 | COMMAND_CONVEYOR_MOTOR_CW | 2 | Rotate the conveyor clockwise. |
 | COMMAND_CONVEYOR_MOTOR_CCW | 3 | Rotate the conveyor counter-clockwise. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "commands": [
           {
@@ -231,9 +231,9 @@ List of conveyor motor commands to execute.
 
 *(No fields defined)*
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 

@@ -84,9 +84,9 @@ Mapping between a given tray to a goal. Note: Tray mapping is only supported for
 |`tray_name`| `string` | Name of the tray. |
 |`goal`| [`Goal`](LocalizationAndNavigation.md#goal) | Target goal for this tray. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "serviMission": {
           "navigateMission": {
@@ -117,9 +117,9 @@ Mapping between a given tray to a goal. Note: Tray mapping is only supported for
     | `hosting` | *repeated* [`Goal`](LocalizationAndNavigation.md#goal)<br/>`required` | a list of `Goal` |
     | `hosting_patrol` | *repeated* [`Goal`](LocalizationAndNavigation.md#goal)<br/>`required` | a list of `Goal` |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionWorkflow": {
           "serviWorkflow": {
@@ -171,7 +171,7 @@ Represents the state of a single tray.
 
 ##### Tray status example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T16:00:00Z",
@@ -223,9 +223,9 @@ Selector to specify which trays to calibrate.
 |------|------|-------------|
 | `tray_names` | *repeated* `string` | List of tray names to calibrate. If empty, calibrates all trays. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "selector": {
           "trayNames": ["top", "middle"]
@@ -237,9 +237,9 @@ Selector to specify which trays to calibrate.
 
 *(No fields defined)*
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 

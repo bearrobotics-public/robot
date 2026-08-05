@@ -12,9 +12,9 @@ Security details for Wi-Fi network authentication.
 |`username`   |`string` *optional*	| User provided input for enterprise networks requiring username. For personal and unsecure networks, username may be omitted. |
 |`password`	|`string`	| User provided input for password input for secure networks. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "password": "mypassword"
       }
@@ -29,9 +29,9 @@ Optional parameters for static IP configuration.
 |`gateway_ip`	|`string`	| Network gateway that local traffic is routed to. e.g. `"192.168.1.1"` |
 |`dns_ips`	|`string` *repeated*	| A list of DNS servers to override the DNS resolution provided by the host network. e.g. `["8.8.8.8", "8.8.4.4"]` |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "cidrIp": "192.168.1.123/24",
         "gatewayIp": "192.168.1.1",
@@ -46,9 +46,9 @@ Represents the current network state.
 |------------|-------------| ---|
 |`connected_wifi`   |[`Wifi`](#wifi) *optional*	| State related to the currently connected Wi-Fi. No connected_wifi indicates that no Wi-Fi network is connected. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "connectedWifi": {
           "ssid": "MyWiFiNetwork",
@@ -87,9 +87,9 @@ Represents a Wi-Fi network.
 | `CONNECTION_INTERNET_ONLY` | 2 | Internet is connected but universe connection cannot be established. |
 | `CONNECTION_NO_INTERNET` | 3 | Network is connected but it does not have an internet connection. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "ssid": "MyWiFiNetwork",
         "signalStrength": 85,
@@ -106,9 +106,9 @@ Lists of remembered and available Wi-Fi networks.
 |`saved_networks`   |*repeated* [`Wifi`](#wifi)	| List of remembered Wi-Fi networks. (not necessarily available) |
 |`available_networks`	|*repeated* [`Wifi`](#wifi)	| List of other available networks. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "savedNetworks": [
           {
@@ -140,9 +140,9 @@ Various information of the wireless interface and connected Wi-Fi network.
 |`mac_address`	|`string`	| Unique MAC address for the Wi-Fi interface. e.g. `"aa:1a:a1:a1:1a:11"` |
 |`dns_ips`	|`string` *repeated*	| A list of DNS servers to override the DNS resolution provided by the host network. e.g. `["8.8.8.8", "8.8.4.4"]` |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "currentSsid": "MyWiFiNetwork",
         "cidrIp": "192.168.1.123/24",

@@ -13,9 +13,9 @@ A single point of interest on the map that a robot can navigate to and align its
 | `display_name` | `string` | Human-readable name for the destination. |
 | `pose` | [`Pose`](LocalizationAndNavigation.md#pose) | Position of the destination in the robot's map coordinate system. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "destinationId": "table_12",
         "displayName": "Table 12",

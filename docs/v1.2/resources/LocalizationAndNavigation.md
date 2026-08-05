@@ -13,9 +13,9 @@ Represents the robot's pose on the map.
 | `y_meters` | `float` | Y-coordinate in meters within the map. |
 | `heading_radians` | `float` | The heading of the robot in radians. Ranges from -π to π, where 0.0 points along the positive x-axis. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "xMeters": 2.5,
         "yMeters": 3.0,
@@ -31,9 +31,9 @@ Represents a target destination or pose for the robot to navigate to. Exactly on
 | `destination_id` | `string` | Unique identifier for the destination. See [`Destination`](LocationsAndMaps.md#destination). |
 | `pose` | [`Pose`](#pose) | Pose of the robot on the map. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "pose": {
           "xMeters": 2.5,

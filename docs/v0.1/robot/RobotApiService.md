@@ -259,9 +259,9 @@ The definition of Bear Robot API service.
 | --------- | ----------------------------- | ----------- |
 | `mission` | [Mission](Mission.md#mission) | The mission to append to the queue. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "mission": {
           "type": "TYPE_ONEOFF",
@@ -284,9 +284,9 @@ The definition of Bear Robot API service.
 | ------------ | ------ | ---------------------------------------------- |
 | `mission_id` | string | The unique identifier of the appended mission. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionId": "cbd47ab1-df21-479e-9f72-677b81ab55b0"
       }
@@ -296,9 +296,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -308,9 +308,9 @@ The definition of Bear Robot API service.
 | ------------ | ------ | ----------- |
 | `mission_id` | string | The ID of the mission created. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionId": "mission-xyz-001"
       }
@@ -324,9 +324,9 @@ The definition of Bear Robot API service.
 | `authentication`     | [Authentication](Network.md#authentication)       | Security details for the network.<br>This field can be omitted if the network is unsecure. |
 | `connection_options` | [ConnectionOptions](Network.md#connectionoptions) | Optional parameters for static IP configuration.                                           |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "ssid": "MyWiFiNetwork",
         "authentication": {
@@ -339,9 +339,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -351,9 +351,9 @@ The definition of Bear Robot API service.
 | --------- | ----------------------------- | ----------- |
 | `mission` | [Mission](Mission.md#mission) | The mission to create. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "mission": {
           "type": "TYPE_ONEOFF",
@@ -376,9 +376,9 @@ The definition of Bear Robot API service.
 | ------------ | ------ | ----------- |
 | `mission_id` | string | The ID of the mission created. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionId": "cbd47ab1-df21-479e-9f72-677b81ab55b0"
       }
@@ -390,9 +390,9 @@ The definition of Bear Robot API service.
 | ------- | -------------------------------- | ------------------------------------------------------ |
 | `twist` | [Twist](../common/Math.md#twist) | The desired max linear and angular velocity to travel. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "twist": {
           "linearVelocity": 0.5,
@@ -405,9 +405,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -417,9 +417,9 @@ The definition of Bear Robot API service.
 | ------ | ------ | ----------- |
 | `ssid` | string | SSID of the Wi-Fi network to forget. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "ssid": "MyWiFiNetwork"
       }
@@ -429,9 +429,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -439,9 +439,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -451,9 +451,9 @@ The definition of Bear Robot API service.
 | ---------- | -------------------------------------------- | ----------- |
 | `location` | [Location](../location/Location.md#location) | The current location data to which the robot is connected. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "location": {
           "locationId": "4RVF",
@@ -478,9 +478,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -490,9 +490,9 @@ The definition of Bear Robot API service.
 | ------------- | ------------------------------------------- | ----------- |
 | `map_content` | [MapContent](../location/Map.md#mapcontent) | The current map content data loaded on the robot. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "mapContent": {
           "mapId": "9578",
@@ -516,9 +516,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -528,9 +528,9 @@ The definition of Bear Robot API service.
 | ------------- | ---------------------------------- | ----------- |
 | `system_info` | [SystemInfo](System.md#systeminfo) | The robot system information. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "systemInfo": {
           "softwareVersion": "servi-24.03",
@@ -554,9 +554,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -566,9 +566,9 @@ The definition of Bear Robot API service.
 | ------------------ | --------------------------------------------- | ----------- |
 | `wifi_connections` | [WifiConnections](Network.md#wificonnections) | Lists of remembered and available Wi-Fi networks. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "wifiConnections": {
           "savedNetworks": [
@@ -597,9 +597,9 @@ The definition of Bear Robot API service.
 | ------ | ---------------------------------------------------- | ----------- |
 | `goal` | [LocalizationGoal](Localization.md#localizationgoal) | The localization goal. The robot must be placed within a 5x5 meter window from the localization goal. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "goal": {
           "pose": {
@@ -615,9 +615,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -627,9 +627,9 @@ The definition of Bear Robot API service.
 | ---------------- | ---------------------------------------- | ----------- |
 | `system_command` | [SystemCommand](System.md#systemcommand) | The system command to execute. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "systemCommand": {
           "reboot": {}
@@ -641,9 +641,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -653,9 +653,9 @@ The definition of Bear Robot API service.
 | -------------- | -------------------------------------------------- | ----------- |
 | `e_stop_state` | [EmergencyStopState](Status.md#emergencystopstate) | The emergency stop state to set. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "eStopState": {
           "emergency": "EMERGENCY_ENGAGED"
@@ -667,9 +667,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -679,9 +679,9 @@ The definition of Bear Robot API service.
 | ---------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | `pose_with_covariance` | [PoseWithCovariance](Robot.md#posewithcovariance) | A pose and a covariance matrix, if the covariance is not set, the internal default values will be applied. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "poseWithCovariance": {
           "pose": {
@@ -698,9 +698,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -710,9 +710,9 @@ The definition of Bear Robot API service.
 | --------- | ------------------------------ | ----------- |
 | `setting` | [Setting](Settings.md#setting) | The setting to set. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "setting": {
           "key": "robot-max-vel-x",
@@ -725,9 +725,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -735,9 +735,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -748,9 +748,9 @@ The definition of Bear Robot API service.
 | `metadata`      | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `battery_state` | [BatteryState](Status.md#batterystate)                  | The current battery state. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -768,9 +768,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -781,9 +781,9 @@ The definition of Bear Robot API service.
 | `metadata`     | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `e_stop_state` | [EmergencyStopState](Status.md#emergencystopstate)      | The current emergency stop state. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -799,9 +799,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -812,9 +812,9 @@ The definition of Bear Robot API service.
 | `metadata`           | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `localization_state` | [LocalizationState](Localization.md#localizationstate)   | The current localization state. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -830,9 +830,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -843,9 +843,9 @@ The definition of Bear Robot API service.
 | `metadata`      | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `mission_state` | [MissionState](Mission.md#missionstate)                 | The current mission state of the robot. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -873,9 +873,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -886,9 +886,9 @@ The definition of Bear Robot API service.
 | `metadata`      | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `network_state` | [NetworkState](Network.md#networkstate)                 | The current network state. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -909,9 +909,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -922,9 +922,9 @@ The definition of Bear Robot API service.
 | `metadata`       | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `odometry_state` | [OdometryState](Robot.md#odometrystate)                 | The current odometry state. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -948,9 +948,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -961,9 +961,9 @@ The definition of Bear Robot API service.
 | `metadata`        | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `operation_state` | [OperationState](Status.md#operationstate)              | The current operation state. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -984,9 +984,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -997,9 +997,9 @@ The definition of Bear Robot API service.
 | `metadata` | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `pose`     | [Pose](Robot.md#pose)                                   | The current robot pose. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -1017,9 +1017,9 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -1030,9 +1030,9 @@ The definition of Bear Robot API service.
 | `metadata`       | [EventMetadata](../common/Annotations.md#eventmetadata) | Event metadata including timestamp and sequence number. |
 | `settings_state` | [SettingsState](Settings.md#settingsstate)              | The current settings state. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "metadata": {
           "timestamp": "2025-04-01T15:30:00Z",
@@ -1054,9 +1054,9 @@ The definition of Bear Robot API service.
 | `floor_level`   | int32 | The floor level to switch to. |
 | `section_index` | int32 | The section index to switch to. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "floorLevel": 0,
         "sectionIndex": 0
@@ -1069,9 +1069,9 @@ The definition of Bear Robot API service.
 | -------- | ------ | ----------- |
 | `map_id` | string | The ID of the switched map. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "mapId": "9578"
       }
@@ -1083,9 +1083,9 @@ The definition of Bear Robot API service.
 | ----------------- | ------------------------------------------- | ----------- |
 | `mission_command` | [MissionCommand](Mission.md#missioncommand) | Command to update the state of an active mission. |
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {
         "missionCommand": {
           "missionId": "f842c8ac-62de-412e-90fb-bf37022db2f4",
@@ -1098,8 +1098,8 @@ The definition of Bear Robot API service.
 
 - _(No fields defined)_
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```

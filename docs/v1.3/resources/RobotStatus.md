@@ -13,9 +13,9 @@ Robot state includes connectivity and operational states.
 
 The request takes no parameters.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -159,9 +159,9 @@ Represents the set of robot states specifically for Carti robots.
 | EMERGENCY_ENGAGED | 1 | Triggers an emergency stop. Overrides and sets navigation-related velocity command to 0 to the motor. |
 | EMERGENCY_DISENGAGED | 2 | Wheels will resume acting upon software navigation commands. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
       {
         "robotState": {
           "connection": {
@@ -246,9 +246,9 @@ Upon subscription, the latest robot state is sent immediately. Updates are strea
 
 The request takes no parameters.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -277,7 +277,7 @@ The current robot state including connectivity, battery, emergency stop, mission
 | `localization_state` | [`LocalizationState`](LocalizationAndNavigation.md#localizationstate-enum) | Localization state of the robot. |
 | `navigation_state` | [`NavigationState`](#navigationstate) | Navigation-related state of the robot, including whether it is currently stuck. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
     ```json
     {
@@ -364,9 +364,9 @@ The **stuck** state indicates the robot is unable to make navigation progress (e
 
 The request takes no parameters.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -382,7 +382,7 @@ The request takes no parameters.
 ##### navigation_state `NavigationState`
 The current navigation-related state of the robot. See [`NavigationState`](#navigationstate) and [`StuckState`](#stuckstate) for field and enum definitions.
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
     ```json
     {
@@ -416,9 +416,9 @@ Upon subscription, the latest known error codes are sent immediately. Updates ar
 
 The request takes no parameters.
 
-##### JSON Request Example
+##### Request Example
 === "JSON"
-    ```js
+    ```json
       {}
     ```
 
@@ -449,9 +449,9 @@ Represents a single error reported by the robot.
 | SEVERITY_MEDIUM | 2 | Medium severity indicates an identified issue that does not block operation. |
 | SEVERITY_HIGH | 3 | High severity indicates an identified issue that blocks operation. |
 
-##### JSON Response Example
+##### Response Example
 === "JSON"
-    ```js
+    ```json
     {
       "errorCodes": {
         "metadata": {

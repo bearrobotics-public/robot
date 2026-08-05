@@ -16,9 +16,9 @@ An empty message used to initiate a robot reboot.
 
 *(No fields defined)*
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "reboot": {}
       }
@@ -47,9 +47,9 @@ Provides information related to the system.
 | `ROBOT_FAMILY_SERVI_PLUS` | 3 | Servi Plus robot family. |
 | `ROBOT_FAMILY_SERVI_LIFT` | 4 | Servi Lift robot family. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "softwareVersion": "servi-24.03",
         "firmwareVersion": "3.2.4.1",
@@ -82,9 +82,9 @@ Represents the system health state.
 | `HEALTH_OK` | 1 | Robot is in a healthy condition. |
 | `HEALTH_ERROR` | 2 | Robot has health issues. |
 
-##### JSON Example
+##### Example
 === "JSON"
-    ```js
+    ```json
       {
         "health": "HEALTH_OK"
       }
