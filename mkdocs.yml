@@ -1,4 +1,4 @@
-site_name: Bear Base API
+site_name: Bear Robot API
 site_url: https://base.api.bearrobotics.ai/
 copyright: Copyright 2026 Bear Robotics, Inc. All rights reserved.
 theme:
@@ -36,7 +36,7 @@ markdown_extensions:
 nav:
   - Overview:
     - index.md
-  - API Reference:
+  - Robot API Reference:
     - v1.3:
       - gRPC API:
         - Mission: v1.3/resources/Mission.md

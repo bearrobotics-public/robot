@@ -1,23 +1,21 @@
-# Bear Base API
+# Bear Robot API
 
 ## Introduction
-Welcome to the Bear's **Base** repository. This repository contains:
+Welcome to the Bear's **Robot** repository. This repository contains:
 - Protocol Buffers (`.proto` files) defining the API specifications.
-- Documentation for integrating and using the Base API service.
+- Documentation for integrating and using the Robot API service.
 
-The Bear Base API Service is a gRPC-based API for third-party clients to:
-- **Send commands** to control the robot base.
-- **Receive status updates** from robot base, such as odometry and battery status.
+The Bear Robot API Service is a gRPC-based API for third-party clients to:
+- **Send commands** to control the robot.
+- **Receive status updates** from the robot, such as odometry and battery status.
 - **Retrieve robot information**.
 
-For a comprehensive overview of the API capabilities, refer to the **Public Base API** documentation website. While currently using gRPC, future plans include adding corresponding REST APIs.
-
-See [API Reference](https://bearrobotics-public.github.io/base/)
+For a comprehensive overview of the API capabilities, refer to the [Robot API public docs](https://bearrobotics-public.github.io/robot/). While currently using gRPC, future plans include adding corresponding REST APIs.
 
 ---
 
 ## Overview
-The Bear Base API facilitates communication between third-party clients and robots via the gRPC framework. It employs:
+The Bear Robot API facilitates communication between third-party clients and robots via the gRPC framework. It employs:
 - **Unary RPC**: For request/response-type communications.
 - **Server-streaming RPC**: For continuous updates from robots.
 
@@ -50,16 +48,15 @@ The Bear Base API facilitates communication between third-party clients and robo
 
 ### Cloning the Repository
 ```bash
-git clone https://github.com/bearrobotics-public/base.git
-cd base
+git clone https://github.com/bearrobotics-public/robot.git
+cd robot
 ```
 
 ### Compile & Develop
-The [API Reference](https://bearrobotics-public.github.io/base/v0/robot/RobotApiService/) has documentation for available API.
+The [Robot API Reference](https://bearrobotics-public.github.io/robot/v1.3/resources/Mission/) has documentation for available API.
 
-Client code generation instructions and usage examples for Python can be found [HERE](https://bearrobotics-public.github.io/base/guides/setup/examples_python/)
+Client code generation instructions and usage examples for Python can be found in our [Setup Guide](https://bearrobotics-public.github.io/robot/guides/setup/examples_python/)
 
 ## License
 
 This project is licensed under the Mozilla Public License version 2.0 (MPLv2). See the [LICENSE](./LICENSE) file for details.
-
