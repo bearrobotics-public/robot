@@ -551,7 +551,7 @@ The current mission status of the robot.
 | `current_goal_index` | `int32` | Index of the currently active goal in the goals list. |
 | `mission_feedback` | [`MissionFeedback`](#missionfeedback) | Latest feedback for the mission. |
 | `mission_type` | [`MissionType`](#missiontype) | Type of the mission. |
-| `owner` | `string` | Owner of the mission (e.g., "touchscreen", "api", etc.). |
+| `owner` | `string` | Identifier of the client that requested the mission. It can be empty, for example for missions started from the touchscreen. Do not use it to tell where a mission came from. |
 
 #### State `enum`
 
@@ -680,7 +680,7 @@ Defines the different types of missions that can be executed.
             "missionType": {
               "baseType": "BASE_TYPE_NAVIGATE"
             },
-            "owner": "api"
+            "owner": ""
           }
         ],
         "currentMissionIndex": 0
