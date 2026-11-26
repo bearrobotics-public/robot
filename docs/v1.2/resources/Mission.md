@@ -371,7 +371,7 @@ The current mission status of the robot.
 | `current_goal_index` | `int32` | Index of the currently active goal in the goals list. |
 | `mission_feedback` | [`MissionFeedback`](#missionfeedback) | Latest feedback for the mission. |
 | `mission_type` | [`MissionType`](#missiontype) | Type of the mission. |
-| `owner` | `string` | Identifier of the client that requested the mission. It can be empty, for example for missions started from the touchscreen. Do not use it to tell where a mission came from. |
+| `owner` | `string` | Informational only. It can be empty, and its values can change between robot software versions. Do not use it in integration logic. To track missions you created, use the `mission_id` returned by `CreateMission` or `AppendMission`. |
 
 #### State `enum`
 
